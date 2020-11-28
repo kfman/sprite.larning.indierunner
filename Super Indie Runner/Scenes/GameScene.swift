@@ -25,6 +25,8 @@ class GameScene: SKScene {
     var gameState = GameState.ready
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector(dx:0, dy: -6.0)
         createLayers()
     }
     
@@ -75,6 +77,7 @@ class GameScene: SKScene {
         player.scale(to: frame.size, width: false, multiplier: 0.1)
         
         player.name = GameConstants.StringConstants.playerName
+        PhysicsHelper.addPhysicsBody(to: player, with: player.name!)
         player.position = CGPoint(x: frame.midX/2, y: frame.midY)
         player.zPosition = GameConstants.ZPositions.playerZ
 
@@ -113,5 +116,9 @@ class GameScene: SKScene {
             backgroundLayer.update(dt)
         }
     }
+}
+
+extension GameScene: SKPhysicsContactDelegate{
+    
 }
 

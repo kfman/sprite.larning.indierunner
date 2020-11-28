@@ -24,7 +24,7 @@ class PhysicsHelper {
         
         case GameConstants.StringConstants.enemyName:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
-            sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.enimyCategorie
+            sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.enemyCategorie
             
         default:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)

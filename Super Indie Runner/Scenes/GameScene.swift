@@ -251,7 +251,7 @@ extension GameScene: SKPhysicsContactDelegate{
         case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.finishCategorie:
             gameState = .finished
             
-        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.enimyCategorie:
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.enemyCategorie:
             handleEnemyContact()
         
         case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.frameCategorie:

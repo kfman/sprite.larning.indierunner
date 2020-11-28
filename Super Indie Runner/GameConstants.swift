@@ -18,7 +18,7 @@ struct GameConstants{
         static let groundCategorie : UInt32 = 0x02
         static let finishCategorie: UInt32 = 0x04
         static let collectableCategorie : UInt32 = 0x08
-        static let enimyCategorie : UInt32 = 0x10
+        static let enemyCategorie : UInt32 = 0x10
         static let frameCategorie : UInt32 = 0x20
         static let ceilingCategorie : UInt32 = 0x40
     }

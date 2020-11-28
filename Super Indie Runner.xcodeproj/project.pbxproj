@@ -26,6 +26,7 @@
 		246088CA25723114009E18F2 /* Super_Indie_RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088C925723114009E18F2 /* Super_Indie_RunnerTests.swift */; };
 		246088D525723115009E18F2 /* Super_Indie_RunnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088D425723115009E18F2 /* Super_Indie_RunnerUITests.swift */; };
 		24C57E112572F79800A5F3F6 /* ParticleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C57E102572F79800A5F3F6 /* ParticleHelper.swift */; };
+		24C57E182572FA7900A5F3F6 /* CoinDustEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24C57E162572FA7900A5F3F6 /* CoinDustEmitter.sks */; };
 		24CCC272257277BC001A0415 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CCC271257277BC001A0415 /* AnimationHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		246088D425723115009E18F2 /* Super_Indie_RunnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Super_Indie_RunnerUITests.swift; sourceTree = "<group>"; };
 		246088D625723115009E18F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C57E102572F79800A5F3F6 /* ParticleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleHelper.swift; sourceTree = "<group>"; };
+		24C57E162572FA7900A5F3F6 /* CoinDustEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinDustEmitter.sks; sourceTree = "<group>"; };
 		24CCC271257277BC001A0415 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 		246088B025723113009E18F2 /* Super Indie Runner */ = {
 			isa = PBXGroup;
 			children = (
+				24C57E152572FA3F00A5F3F6 /* Particle Emitters */,
 				244A80BB25725F2000C943BE /* Helper Files */,
 				244A80B5257258C900C943BE /* Custom Classes */,
 				2443401D25724CC10041DF95 /* Layers */,
@@ -250,6 +253,14 @@
 				244A80B02572571B00C943BE /* GameConstants.swift */,
 			);
 			name = Template;
+			sourceTree = "<group>";
+		};
+		24C57E152572FA3F00A5F3F6 /* Particle Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				24C57E162572FA7900A5F3F6 /* CoinDustEmitter.sks */,
+			);
+			path = "Particle Emitters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				246088BF25723114009E18F2 /* Assets.xcassets in Resources */,
 				244A80A72572513C00C943BE /* readme.md in Resources */,
 				2443400D257237F10041DF95 /* Level_0-1.sks in Resources */,
+				24C57E182572FA7900A5F3F6 /* CoinDustEmitter.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

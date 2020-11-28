@@ -166,7 +166,15 @@ class GameScene: SKScene {
 
     func collectCoint(sprite: SKSpriteNode) {
         coins += 1
-        sprite.removeFromParent()
+        
+        if let coinDust = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.coinDustEmitterKey, particlePositionRange: CGVector(dx: 5.0, dy: 5.0), position: CGPoint.zero){
+            coinDust.zPosition = GameConstants.ZPositions.objectZ
+            sprite.addChild(coinDust)
+            sprite.run(SKAction.fadeOut(withDuration: 0.4)){
+                coinDust.removeFromParent()
+                sprite.removeFromParent()
+            }
+        }
     }
     
     func die(reason: Int){

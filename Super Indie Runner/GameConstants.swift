@@ -41,16 +41,20 @@ struct GameConstants{
         static let groundNodeName = "GroundNode"
         static let finishLineName = "Finish Line"
         static let enemyName = "Enemy"
+        static let coinName = "Coin"
+        static let coinImageName = "gold0"
         
         static let playerIdleAtlas = "Player Idle Atlas"
         static let playerRunAtlas = "Player Run Atlas"
         static let playerJumpAtlas = "Player Jump Atlas"
         static let playerDieAtlas = "Player Die Atlas"
+        static let coinRotateAtlas = "Coin Rotate Atlas"
         
         static let idlePrefixKey = "Idle_"
         static let runPrefixKey = "Run_"
         static let jumpPrefixKey = "Jump_"
         static let diePrefixKey = "Die_"
+        static let coinPrefixKey = "gold"
         
         static let jumpUpActionKey = "JumpUp"
         static let brakeDescentActionKey = "BrakeDescent"

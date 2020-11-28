@@ -60,6 +60,7 @@ struct GameConstants{
         static let brakeDescentActionKey = "BrakeDescent"
         
         static let coinDustEmitterKey = "CoinDustEmitter"
+        static let brakeEmitterKey = "BrakeEmitter"
     }
     
 }

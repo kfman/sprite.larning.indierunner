@@ -25,6 +25,7 @@
 		246088BF25723114009E18F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246088BE25723114009E18F2 /* Assets.xcassets */; };
 		246088CA25723114009E18F2 /* Super_Indie_RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088C925723114009E18F2 /* Super_Indie_RunnerTests.swift */; };
 		246088D525723115009E18F2 /* Super_Indie_RunnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088D425723115009E18F2 /* Super_Indie_RunnerUITests.swift */; };
+		24AEE6A72573044E006B991F /* BrakeEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24AEE6A52573044E006B991F /* BrakeEmitter.sks */; };
 		24C57E112572F79800A5F3F6 /* ParticleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C57E102572F79800A5F3F6 /* ParticleHelper.swift */; };
 		24C57E182572FA7900A5F3F6 /* CoinDustEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24C57E162572FA7900A5F3F6 /* CoinDustEmitter.sks */; };
 		24CCC272257277BC001A0415 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CCC271257277BC001A0415 /* AnimationHelper.swift */; };
@@ -72,6 +73,7 @@
 		246088D025723115009E18F2 /* Super Indie RunnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Super Indie RunnerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		246088D425723115009E18F2 /* Super_Indie_RunnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Super_Indie_RunnerUITests.swift; sourceTree = "<group>"; };
 		246088D625723115009E18F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24AEE6A52573044E006B991F /* BrakeEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BrakeEmitter.sks; sourceTree = "<group>"; };
 		24C57E102572F79800A5F3F6 /* ParticleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleHelper.swift; sourceTree = "<group>"; };
 		24C57E162572FA7900A5F3F6 /* CoinDustEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinDustEmitter.sks; sourceTree = "<group>"; };
 		24CCC271257277BC001A0415 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				24C57E162572FA7900A5F3F6 /* CoinDustEmitter.sks */,
+				24AEE6A52573044E006B991F /* BrakeEmitter.sks */,
 			);
 			path = "Particle Emitters";
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				246088BF25723114009E18F2 /* Assets.xcassets in Resources */,
 				244A80A72572513C00C943BE /* readme.md in Resources */,
 				2443400D257237F10041DF95 /* Level_0-1.sks in Resources */,
+				24AEE6A72573044E006B991F /* BrakeEmitter.sks in Resources */,
 				24C57E182572FA7900A5F3F6 /* CoinDustEmitter.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

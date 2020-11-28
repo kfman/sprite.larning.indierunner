@@ -10,6 +10,20 @@ import CoreGraphics
 
 struct GameConstants{
     
+    struct PhysicsCategories{
+        static let noCategorie : UInt32 = 0
+        static let allCategorie: UInt32 = UInt32.max
+        
+        static let playerCategorie : UInt32 = 0x01
+        static let groundCategorie : UInt32 = 0x02
+        static let finishCategorie: UInt32 = 0x04
+        static let collectableCategorie : UInt32 = 0x08
+        static let enimyCategorie : UInt32 = 0x10
+        static let frameCategorie : UInt32 = 0x20
+        static let ceilingCategorie : UInt32 = 0x40
+    }
+    
+    
     struct ZPositions{
         static let farBGZ: CGFloat = 0
         static let closeBGZ: CGFloat = 1
@@ -38,6 +52,8 @@ struct GameConstants{
         
         static let jumpUpActionKey = "JumpUp"
         static let brakeDescentActionKey = "BrakeDescent"
+        
+        static let finishLineName = "Finish Line"
     }
     
 }

@@ -19,6 +19,9 @@ class GameScene: SKScene {
     var tileMap: SKTileMapNode!
     var player: Player!
     
+    var touch = false
+    var brake = false
+    
     var lastTime: TimeInterval = 0
     var dt: TimeInterval = 0
     
@@ -63,7 +66,7 @@ class GameScene: SKScene {
         
         worldLayer.zPosition = GameConstants.ZPositions.worldZ
         load(level: "Level_0-1")
-
+        
     }
     
     func load(level: String){
@@ -79,6 +82,12 @@ class GameScene: SKScene {
             tileMap = groundTile
             tileMap.scale(to: frame.size, width: false, multiplier: 1.0)
             PhysicsHelper.addPhysicsBody(to: tileMap, and: "ground")
+            
+            for child in groundTile.children{
+                if let sprite = child as? SKSpriteNode, sprite.name != nil{
+                    ObjectHelper.handleChild(sprite: sprite, with: sprite.name!)
+                }
+            }
         }
         
         addPlayer()
@@ -103,33 +112,61 @@ class GameScene: SKScene {
         up.timingMode = .easeOut
         
         player.createUserData(entry: up, forKey: GameConstants.StringConstants.jumpUpActionKey)
+        
+        let move = SKAction.moveBy(x: 0.0, y: player.size.height, duration: 0.4)
+        let jump = SKAction.animate(with: player.jumpFrames, timePerFrame: 0.4/Double(player.jumpFrames.count))
+        
+        let group = SKAction.group([move, jump])
+        
+        player.createUserData(entry: group, forKey: GameConstants.StringConstants.brakeDescentActionKey)
     }
     
     func jump(){
+        player.airborne = true
         player.turnGravity(on: false)
         player.run(player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey ) as! SKAction){
-            self.player.turnGravity(on: true)
+            if self.touch{
+                self.player.run(self.player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey) as! SKAction, completion:{
+                    self.player.turnGravity(on: true)
+                })
+            } else {
+                self.player.turnGravity(on: true)
+            }
         }
-        
     }
+    
+    func brakeDescent(){
+        brake = true
+        player.physicsBody!.velocity.dy = 0.0
+        
+        player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescentActionKey) as! SKAction)
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState {
         case .ready:
             gameState = .ongoing
         case .ongoing:
-            jump()
+            touch = true
+            if !player.airborne{
+                jump()
+            }else if !brake {
+                brakeDescent()
+            }
         default:
             break
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        touch = false
+        //player.turnGravity(on: true)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        touch = false
+        //player.turnGravity(on: true)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -153,7 +190,7 @@ class GameScene: SKScene {
             if let groundNode = node as? GroundNode{
                 let groundY = (groundNode.position.y + groundNode.size.height) * tileMap.yScale
                 let playerY = player.position.y - player.size.height / 3
-
+                
                 groundNode.isBodyActivated = playerY > groundY
             }
         }
@@ -161,6 +198,33 @@ class GameScene: SKScene {
 }
 
 extension GameScene: SKPhysicsContactDelegate{
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch contactMask{
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.groundCategorie:
+            player.airborne = false
+            brake = false
+            
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.finishCategorie:
+            gameState = .finished
+            
+        default:
+            break
+        }
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        switch contactMask{
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.groundCategorie:
+            player.airborne = true
+        default:
+            break
+        }
+    }
     
 }
 

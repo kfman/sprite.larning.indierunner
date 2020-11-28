@@ -24,6 +24,7 @@
 		246088BF25723114009E18F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246088BE25723114009E18F2 /* Assets.xcassets */; };
 		246088CA25723114009E18F2 /* Super_Indie_RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088C925723114009E18F2 /* Super_Indie_RunnerTests.swift */; };
 		246088D525723115009E18F2 /* Super_Indie_RunnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088D425723115009E18F2 /* Super_Indie_RunnerUITests.swift */; };
+		24CCC272257277BC001A0415 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CCC271257277BC001A0415 /* AnimationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		246088D025723115009E18F2 /* Super Indie RunnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Super Indie RunnerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		246088D425723115009E18F2 /* Super_Indie_RunnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Super_Indie_RunnerUITests.swift; sourceTree = "<group>"; };
 		246088D625723115009E18F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24CCC271257277BC001A0415 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				244A80BC25725F3100C943BE /* PhysicsHelper.swift */,
+				24CCC271257277BC001A0415 /* AnimationHelper.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				246088BA25723113009E18F2 /* GameViewController.swift in Sources */,
 				244A80B7257258EE00C943BE /* Player.swift in Sources */,
 				244A80B12572571B00C943BE /* GameConstants.swift in Sources */,
+				24CCC272257277BC001A0415 /* AnimationHelper.swift in Sources */,
 				246088B225723113009E18F2 /* AppDelegate.swift in Sources */,
 				244A80AC2572541400C943BE /* RepeatingLayer.swift in Sources */,
 				244A80C52572650C00C943BE /* GroundNode.swift in Sources */,

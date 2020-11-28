@@ -11,6 +11,10 @@
 		24434013257238900041DF95 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24434012257238900041DF95 /* TileSets.sks */; };
 		2443401925723AB10041DF95 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443401825723AB10041DF95 /* SKNode+Extensions.swift */; };
 		2443401F25724CD10041DF95 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443401E25724CD10041DF95 /* Layer.swift */; };
+		244A80A72572513C00C943BE /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 244A80A62572513C00C943BE /* readme.md */; };
+		244A80AC2572541400C943BE /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80AB2572541400C943BE /* RepeatingLayer.swift */; };
+		244A80B12572571B00C943BE /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80B02572571B00C943BE /* GameConstants.swift */; };
+		244A80B7257258EE00C943BE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80B6257258EE00C943BE /* Player.swift */; };
 		246088B225723113009E18F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088B125723113009E18F2 /* AppDelegate.swift */; };
 		246088B825723113009E18F2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088B725723113009E18F2 /* GameScene.swift */; };
 		246088BA25723113009E18F2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088B925723113009E18F2 /* GameViewController.swift */; };
@@ -42,6 +46,10 @@
 		24434012257238900041DF95 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		2443401825723AB10041DF95 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		2443401E25724CD10041DF95 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		244A80A62572513C00C943BE /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		244A80AB2572541400C943BE /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
+		244A80B02572571B00C943BE /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		244A80B6257258EE00C943BE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		246088AE25723113009E18F2 /* Super Indie Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Indie Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		246088B125723113009E18F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		246088B725723113009E18F2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -118,13 +126,23 @@
 			isa = PBXGroup;
 			children = (
 				2443401E25724CD10041DF95 /* Layer.swift */,
+				244A80AB2572541400C943BE /* RepeatingLayer.swift */,
 			);
 			path = Layers;
+			sourceTree = "<group>";
+		};
+		244A80B5257258C900C943BE /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				244A80B6257258EE00C943BE /* Player.swift */,
+			);
+			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
 		246088A525723113009E18F2 = {
 			isa = PBXGroup;
 			children = (
+				244A80A62572513C00C943BE /* readme.md */,
 				246088B025723113009E18F2 /* Super Indie Runner */,
 				246088C825723114009E18F2 /* Super Indie RunnerTests */,
 				246088D325723115009E18F2 /* Super Indie RunnerUITests */,
@@ -145,6 +163,7 @@
 		246088B025723113009E18F2 /* Super Indie Runner */ = {
 			isa = PBXGroup;
 			children = (
+				244A80B5257258C900C943BE /* Custom Classes */,
 				2443401D25724CC10041DF95 /* Layers */,
 				2443401725723A9C0041DF95 /* Extensions */,
 				244340112572386C0041DF95 /* Tiles */,
@@ -205,6 +224,7 @@
 			children = (
 				246088B125723113009E18F2 /* AppDelegate.swift */,
 				246088C025723114009E18F2 /* Info.plist */,
+				244A80B02572571B00C943BE /* GameConstants.swift */,
 			);
 			name = Template;
 			sourceTree = "<group>";
@@ -315,6 +335,7 @@
 				24434013257238900041DF95 /* TileSets.sks in Resources */,
 				246088BD25723113009E18F2 /* Main.storyboard in Resources */,
 				246088BF25723114009E18F2 /* Assets.xcassets in Resources */,
+				244A80A72572513C00C943BE /* readme.md in Resources */,
 				2443400D257237F10041DF95 /* Level_0-1.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +365,10 @@
 				2443401925723AB10041DF95 /* SKNode+Extensions.swift in Sources */,
 				2443401F25724CD10041DF95 /* Layer.swift in Sources */,
 				246088BA25723113009E18F2 /* GameViewController.swift in Sources */,
+				244A80B7257258EE00C943BE /* Player.swift in Sources */,
+				244A80B12572571B00C943BE /* GameConstants.swift in Sources */,
 				246088B225723113009E18F2 /* AppDelegate.swift in Sources */,
+				244A80AC2572541400C943BE /* RepeatingLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

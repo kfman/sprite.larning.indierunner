@@ -34,6 +34,7 @@ class PhysicsHelper {
                     tiles.append(0)
                 }
             }
+            
             if (tiles.contains(1)){
                 var platform = [Int]()
                 for (index,tile) in tiles.enumerated(){

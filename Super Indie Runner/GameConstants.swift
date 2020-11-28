@@ -35,6 +35,9 @@ struct GameConstants{
         static let runPrefixKey = "Run_"
         static let jumpPrefixKey = "Jump_"
         static let diePrefixKey = "Die_"
+        
+        static let jumpUpActionKey = "JumpUp"
+        static let brakeDescentActionKey = "BrakeDescent"
     }
     
 }

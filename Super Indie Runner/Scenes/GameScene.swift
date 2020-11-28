@@ -95,14 +95,32 @@ class GameScene: SKScene {
         player.loadTextures()
         player.state = .idle
         addChild(player)
+        addPlayerActions()
+    }
+    
+    func addPlayerActions(){
+        let up = SKAction.moveBy(x: 0.0, y: frame.size.height / 4, duration: 0.4)
+        up.timingMode = .easeOut
+        
+        player.createUserData(entry: up, forKey: GameConstants.StringConstants.jumpUpActionKey)
+    }
+    
+    func jump(){
+        player.turnGravity(on: false)
+        player.run(player.userData?.value(forKey: GameConstants.StringConstants.jumpUpActionKey ) as! SKAction){
+            self.player.turnGravity(on: true)
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState {
         case .ready:
             gameState = .ongoing
+        case .ongoing:
+            jump()
         default:
-            gameState = .paused
+            break
         }
     }
     
@@ -135,7 +153,7 @@ class GameScene: SKScene {
             if let groundNode = node as? GroundNode{
                 let groundY = groundNode.position.y + groundNode.size.height * tileMap.yScale
                 let playerY = player.position.y - player.size.height / 3
-                
+
                 groundNode.isBodyActivated = playerY > groundY
             }
         }

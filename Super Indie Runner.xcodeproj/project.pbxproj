@@ -16,6 +16,7 @@
 		244A80B12572571B00C943BE /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80B02572571B00C943BE /* GameConstants.swift */; };
 		244A80B7257258EE00C943BE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80B6257258EE00C943BE /* Player.swift */; };
 		244A80BD25725F3100C943BE /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80BC25725F3100C943BE /* PhysicsHelper.swift */; };
+		244A80C52572650C00C943BE /* GroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A80C42572650C00C943BE /* GroundNode.swift */; };
 		246088B225723113009E18F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088B125723113009E18F2 /* AppDelegate.swift */; };
 		246088B825723113009E18F2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088B725723113009E18F2 /* GameScene.swift */; };
 		246088BA25723113009E18F2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246088B925723113009E18F2 /* GameViewController.swift */; };
@@ -52,6 +53,7 @@
 		244A80B02572571B00C943BE /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		244A80B6257258EE00C943BE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		244A80BC25725F3100C943BE /* PhysicsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
+		244A80C42572650C00C943BE /* GroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundNode.swift; sourceTree = "<group>"; };
 		246088AE25723113009E18F2 /* Super Indie Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Indie Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		246088B125723113009E18F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		246088B725723113009E18F2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				244A80B6257258EE00C943BE /* Player.swift */,
+				244A80C42572650C00C943BE /* GroundNode.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				244A80B12572571B00C943BE /* GameConstants.swift in Sources */,
 				246088B225723113009E18F2 /* AppDelegate.swift in Sources */,
 				244A80AC2572541400C943BE /* RepeatingLayer.swift in Sources */,
+				244A80C52572650C00C943BE /* GroundNode.swift in Sources */,
 				244A80BD25725F3100C943BE /* PhysicsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,14 +30,16 @@ class GameScene: SKScene {
             switch newValue {
             case .ongoing:
                 player.state = .running
+                pauseEnemies(bool: false)
             case .finished:
                 player.state = .idle
+                pauseEnemies(bool: true)
             default:
                 break
             }
         }
     }
-    
+
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy: -6.0)
@@ -173,6 +175,11 @@ class GameScene: SKScene {
         
     }
     
+    func pauseEnemies(bool: Bool){
+        for enemy in tileMap[GameConstants.StringConstants.enemyName]{
+            enemy.isPaused = bool
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState {
@@ -214,6 +221,9 @@ class GameScene: SKScene {
             worldLayer.update(dt)
             backgroundLayer.update(dt)
         }
+        
+        self.isPaused = true
+        self.isPaused = false
     }
     
     override func didSimulatePhysics() {

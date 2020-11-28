@@ -151,7 +151,7 @@ class GameScene: SKScene {
     override func didSimulatePhysics() {
         for node in tileMap[GameConstants.StringConstants.groundNodeName]{
             if let groundNode = node as? GroundNode{
-                let groundY = groundNode.position.y + groundNode.size.height * tileMap.yScale
+                let groundY = (groundNode.position.y + groundNode.size.height) * tileMap.yScale
                 let playerY = player.position.y - player.size.height / 3
 
                 groundNode.isBodyActivated = playerY > groundY

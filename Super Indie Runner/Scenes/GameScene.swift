@@ -39,6 +39,8 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    var coins = 0
 
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -153,6 +155,20 @@ class GameScene: SKScene {
         die(reason: 0)
     }
     
+    func handleCollectible(sprite: SKSpriteNode){
+        switch sprite.name {
+        case GameConstants.StringConstants.coinName:
+            collectCoint(sprite: sprite)
+        default:
+            break
+        }
+    }
+
+    func collectCoint(sprite: SKSpriteNode) {
+        coins += 1
+        sprite.removeFromParent()
+    }
+    
     func die(reason: Int){
         gameState = .finished
         player.turnGravity(on: false)
@@ -180,6 +196,7 @@ class GameScene: SKScene {
             enemy.isPaused = bool
         }
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState {
@@ -257,7 +274,11 @@ extension GameScene: SKPhysicsContactDelegate{
         case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.frameCategorie:
             physicsBody = nil
             die(reason: 1)
-        
+
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.collectableCategorie:
+            let sprite = contact.bodyA.node?.name == GameConstants.StringConstants.coinName ? contact.bodyA.node : contact.bodyB.node
+            handleCollectible(sprite: sprite as! SKSpriteNode)
+
         default:
             break
         }

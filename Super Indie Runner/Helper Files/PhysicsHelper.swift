@@ -17,14 +17,24 @@ class PhysicsHelper {
             sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.playerCategorie
             sprite.physicsBody!.collisionBitMask = GameConstants.PhysicsCategories.groundCategorie | GameConstants.PhysicsCategories.finishCategorie
             sprite.physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.allCategorie
+        
         case GameConstants.StringConstants.finishLineName:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
             sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.finishCategorie
         
+        case GameConstants.StringConstants.enemyName:
+            sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+            sprite.physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.enimyCategorie
+            
         default:
             sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
         }
     
+        if name != GameConstants.StringConstants.playerName{
+            sprite.physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.playerCategorie
+            sprite.physicsBody!.isDynamic = false
+        }
+        
     }
     
     static func addPhysicsBody(to tileMap: SKTileMapNode, and tileInfo: String){

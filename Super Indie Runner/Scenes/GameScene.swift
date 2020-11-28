@@ -41,6 +41,11 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy: -6.0)
+        
+        physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x:frame.minX, y: frame.minY), to: CGPoint(x:frame.maxX, y: frame.minY))
+        physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.frameCategorie
+        physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.playerCategorie
+        
         createLayers()
     }
     
@@ -142,6 +147,32 @@ class GameScene: SKScene {
         player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescentActionKey) as! SKAction)
     }
     
+    func handleEnemyContact(){
+        die(reason: 0)
+    }
+    
+    func die(reason: Int){
+        gameState = .finished
+        player.turnGravity(on: false)
+        let deathAnimation: SKAction!
+        
+        switch reason{
+        case 1:
+            let up = SKAction.moveTo(y: frame.midY, duration: 0.25)
+                up.timingMode = .easeOut
+            let wait = SKAction.wait(forDuration: 0.1)
+            let down = SKAction.moveTo(y: -player.size.height, duration: 0.2)
+            deathAnimation = SKAction.sequence([up, wait, down])
+        default:
+            deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        }
+        
+        player.run(deathAnimation){
+            self.player.removeFromParent()
+        }
+        
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState {
@@ -210,6 +241,13 @@ extension GameScene: SKPhysicsContactDelegate{
         case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.finishCategorie:
             gameState = .finished
             
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.enimyCategorie:
+            handleEnemyContact()
+        
+        case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.frameCategorie:
+            physicsBody = nil
+            die(reason: 1)
+        
         default:
             break
         }

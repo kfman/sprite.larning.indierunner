@@ -33,6 +33,7 @@
 		24EF85962573A048005F7EEF /* HudDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF85952573A048005F7EEF /* HudDelegate.swift */; };
 		24EF859B2573A0A2005F7EEF /* GameHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF859A2573A0A2005F7EEF /* GameHud.swift */; };
 		24EF85A22573A149005F7EEF /* unanimous.inverted-brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24EF85A12573A13A005F7EEF /* unanimous.inverted-brk.ttf */; };
+		388950C4C562C0A050319BC2 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38895AE5D108503E04AFCE93 /* ScoreManager.swift */; };
 		388951BAFC1796FB3B677CBE /* ScorePopupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388952F23A4073CD353A2812 /* ScorePopupNode.swift */; };
 		388952827F33E82E9B6AFC55 /* SpriteKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889585B8A723BABD4778970 /* SpriteKitButton.swift */; };
 		3889529036B7C6A76A7E1F3D /* PopupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388953E1986A780CD08A767A /* PopupNode.swift */; };
@@ -95,6 +96,7 @@
 		3889542BCB8881C0505A2391 /* PopupButtonHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupButtonHandlerDelegate.swift; sourceTree = "<group>"; };
 		3889585B8A723BABD4778970 /* SpriteKitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitButton.swift; sourceTree = "<group>"; };
 		388959A7F832AA68C678F62B /* BannerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerLabel.swift; sourceTree = "<group>"; };
+		38895AE5D108503E04AFCE93 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				24CCC271257277BC001A0415 /* AnimationHelper.swift */,
 				244A80CC2572C53800C943BE /* ObjectHelper.swift */,
 				24C57E102572F79800A5F3F6 /* ParticleHelper.swift */,
+				38895AE5D108503E04AFCE93 /* ScoreManager.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				388956320AD10FFAF74EF5D8 /* BannerLabel.swift in Sources */,
 				388954C9804513BE5A182E9A /* PopupButtonHandlerDelegate.swift in Sources */,
 				388952827F33E82E9B6AFC55 /* SpriteKitButton.swift in Sources */,
+				388950C4C562C0A050319BC2 /* ScoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

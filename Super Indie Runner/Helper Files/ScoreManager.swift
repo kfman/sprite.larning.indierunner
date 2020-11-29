@@ -11,7 +11,7 @@ struct ScoreManager {
             return existingData
         } else {
             return [GameConstants.StringConstants.scoreScoreKey: 0,
-                    GameConstants.StringConstants.scoreStarKey: 0,
+                    GameConstants.StringConstants.scoreStarsKey: 0,
                     GameConstants.StringConstants.scoreCoinsKey: 0
             ]
         }
@@ -27,7 +27,7 @@ struct ScoreManager {
 
         let currentScore = getCurrentScore(for: levelKey)
         var maxScore = currentScore[GameConstants.StringConstants.scoreScoreKey]!
-        var maxStars = currentScore[GameConstants.StringConstants.scoreStarKey]!
+        var maxStars = currentScore[GameConstants.StringConstants.scoreStarsKey]!
         var maxCoins = currentScore[GameConstants.StringConstants.scoreCoinsKey]!
 
         for score in scores {
@@ -35,8 +35,8 @@ struct ScoreManager {
                 maxScore = score[GameConstants.StringConstants.scoreScoreKey]!
                 newHighScore = true;
             }
-            if score[GameConstants.StringConstants.scoreStarKey]! > maxStars {
-                maxStars = score[GameConstants.StringConstants.scoreStarKey]!
+            if score[GameConstants.StringConstants.scoreStarsKey]! > maxStars {
+                maxStars = score[GameConstants.StringConstants.scoreStarsKey]!
                 newHighScore = true;
             }
             if score[GameConstants.StringConstants.scoreCoinsKey]! > maxCoins {
@@ -50,7 +50,7 @@ struct ScoreManager {
         }
 
         let newScore = [GameConstants.StringConstants.scoreScoreKey: maxScore,
-                        GameConstants.StringConstants.scoreStarKey: maxStars,
+                        GameConstants.StringConstants.scoreStarsKey: maxStars,
                         GameConstants.StringConstants.scoreCoinsKey: maxCoins
         ]
 

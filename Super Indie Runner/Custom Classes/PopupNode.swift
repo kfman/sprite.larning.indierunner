@@ -8,7 +8,7 @@ class PopupNode: SKSpriteNode {
 
     var buttonHandlerDelegate: PopupButtonHandlerDelegate
 
-    init(withTitle title: String, texture: SKTexture, buttonHandlerDelegate: PopupButtonHandlerDelegate) {
+    init(withTitle title: String, and texture: SKTexture, buttonHandlerDelegate: PopupButtonHandlerDelegate) {
         self.buttonHandlerDelegate = buttonHandlerDelegate
 
         super.init(texture: texture, color: UIColor.clear, size: texture.size())

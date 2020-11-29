@@ -13,7 +13,7 @@ class ObjectHelper{
         switch name {
         case GameConstants.StringConstants.finishLineName,
              GameConstants.StringConstants.enemyName,
-             _ where GameConstants.StringConstants.superCoinImageName.contains(name):
+             _ where GameConstants.StringConstants.superCoinNames.contains(name):
             PhysicsHelper.addPhysicsBody(to: sprite, with: name)
     
         default:

@@ -18,6 +18,7 @@ class GameScene: SKScene {
     var mapNode: SKNode!
     var tileMap: SKTileMapNode!
     var player: Player!
+    var hudDelegate: HudDelegate?
     
     var touch = false
     var brake = false
@@ -101,6 +102,7 @@ class GameScene: SKScene {
         }
         
         addPlayer()
+        addHud()
     }
     
     func addPlayer(){
@@ -174,20 +176,26 @@ class GameScene: SKScene {
     func handleCollectible(sprite: SKSpriteNode){
         switch sprite.name {
         case GameConstants.StringConstants.coinName:
-            collectCoint(sprite: sprite)
-        case _ where GameConstants.StringConstants.superCoinName.contains(sprite.name!):
-            collectCoint(sprite: sprite)
+            collectCoin(sprite: sprite)
+        case _ where GameConstants.StringConstants.superCoinNames.contains(sprite.name!):
+            collectCoin(sprite: sprite)
         default:
             break
         }
     }
 
-    func collectCoint(sprite: SKSpriteNode) {
+    func collectCoin(sprite: SKSpriteNode) {
         
-        if GameConstants.StringConstants.superCoinName.contains(sprite.name!){
+        if GameConstants.StringConstants.superCoinNames.contains(sprite.name!){
             superCoins += 1
+            for index in 0...2{
+                if (GameConstants.StringConstants.superCoinNames[index] == sprite.name){
+                    hudDelegate?.addSuperCoin(index: index)
+                }
+            }
         }else {
             coins += 1
+            hudDelegate?.updateCoinLabel(coins: coins)
         }
         
         if let coinDust = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.coinDustEmitterKey, particlePositionRange: CGVector(dx: 5.0, dy: 5.0), position: CGPoint.zero){
@@ -198,6 +206,14 @@ class GameScene: SKScene {
                 sprite.removeFromParent()
             }
         }
+    }
+    
+    func addHud(){
+        let hud = GameHud(width: CGSize(width: frame.width, height: frame.height * 0.1))
+        hud.position = CGPoint(x:frame.midX, y: frame.maxY - frame.height * 0.05)
+        hud.zPosition = GameConstants.ZPositions.hudZ
+        hudDelegate = hud
+        addChild(hud)
     }
     
     func die(reason: Int){
@@ -307,7 +323,10 @@ extension GameScene: SKPhysicsContactDelegate{
             die(reason: 1)
 
         case GameConstants.PhysicsCategories.playerCategorie | GameConstants.PhysicsCategories.collectableCategorie:
-            let sprite = contact.bodyA.node?.name == GameConstants.StringConstants.coinName ? contact.bodyA.node : contact.bodyB.node
+            let bodyAIsCoin = contact.bodyA.node?.name == GameConstants.StringConstants.coinName
+                || GameConstants.StringConstants.superCoinNames.contains(contact.bodyA.node?.name ?? "noname")
+            
+            let sprite = bodyAIsCoin ? contact.bodyA.node : contact.bodyB.node
             handleCollectible(sprite: sprite as! SKSpriteNode)
 
         default:

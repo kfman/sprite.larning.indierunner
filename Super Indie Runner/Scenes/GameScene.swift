@@ -41,6 +41,7 @@ class GameScene: SKScene {
     }
     
     var coins = 0
+    var superCoins = 0
 
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -174,13 +175,20 @@ class GameScene: SKScene {
         switch sprite.name {
         case GameConstants.StringConstants.coinName:
             collectCoint(sprite: sprite)
+        case _ where GameConstants.StringConstants.superCoinName.contains(sprite.name!):
+            collectCoint(sprite: sprite)
         default:
             break
         }
     }
 
     func collectCoint(sprite: SKSpriteNode) {
-        coins += 1
+        
+        if GameConstants.StringConstants.superCoinName.contains(sprite.name!){
+            superCoins += 1
+        }else {
+            coins += 1
+        }
         
         if let coinDust = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.coinDustEmitterKey, particlePositionRange: CGVector(dx: 5.0, dy: 5.0), position: CGPoint.zero){
             coinDust.zPosition = GameConstants.ZPositions.objectZ

@@ -11,7 +11,9 @@ class ObjectHelper{
     
     static func handleChild(sprite: SKSpriteNode, with name: String){
         switch name {
-        case GameConstants.StringConstants.finishLineName, GameConstants.StringConstants.enemyName:
+        case GameConstants.StringConstants.finishLineName,
+             GameConstants.StringConstants.enemyName,
+             _ where GameConstants.StringConstants.superCoinImageName.contains(name):
             PhysicsHelper.addPhysicsBody(to: sprite, with: name)
     
         default:

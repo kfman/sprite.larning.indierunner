@@ -33,6 +33,11 @@
 		24EF85962573A048005F7EEF /* HudDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF85952573A048005F7EEF /* HudDelegate.swift */; };
 		24EF859B2573A0A2005F7EEF /* GameHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF859A2573A0A2005F7EEF /* GameHud.swift */; };
 		24EF85A22573A149005F7EEF /* unanimous.inverted-brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24EF85A12573A13A005F7EEF /* unanimous.inverted-brk.ttf */; };
+		388951BAFC1796FB3B677CBE /* ScorePopupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388952F23A4073CD353A2812 /* ScorePopupNode.swift */; };
+		388952827F33E82E9B6AFC55 /* SpriteKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889585B8A723BABD4778970 /* SpriteKitButton.swift */; };
+		3889529036B7C6A76A7E1F3D /* PopupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388953E1986A780CD08A767A /* PopupNode.swift */; };
+		388954C9804513BE5A182E9A /* PopupButtonHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889542BCB8881C0505A2391 /* PopupButtonHandlerDelegate.swift */; };
+		388956320AD10FFAF74EF5D8 /* BannerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388959A7F832AA68C678F62B /* BannerLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +90,11 @@
 		24EF85952573A048005F7EEF /* HudDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudDelegate.swift; sourceTree = "<group>"; };
 		24EF859A2573A0A2005F7EEF /* GameHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHud.swift; sourceTree = "<group>"; };
 		24EF85A12573A13A005F7EEF /* unanimous.inverted-brk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "unanimous.inverted-brk.ttf"; sourceTree = "<group>"; };
+		388952F23A4073CD353A2812 /* ScorePopupNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePopupNode.swift; sourceTree = "<group>"; };
+		388953E1986A780CD08A767A /* PopupNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupNode.swift; sourceTree = "<group>"; };
+		3889542BCB8881C0505A2391 /* PopupButtonHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupButtonHandlerDelegate.swift; sourceTree = "<group>"; };
+		3889585B8A723BABD4778970 /* SpriteKitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitButton.swift; sourceTree = "<group>"; };
+		388959A7F832AA68C678F62B /* BannerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +170,10 @@
 				244A80B6257258EE00C943BE /* Player.swift */,
 				244A80C42572650C00C943BE /* GroundNode.swift */,
 				24EF859A2573A0A2005F7EEF /* GameHud.swift */,
+				388953E1986A780CD08A767A /* PopupNode.swift */,
+				388952F23A4073CD353A2812 /* ScorePopupNode.swift */,
+				388959A7F832AA68C678F62B /* BannerLabel.swift */,
+				3889585B8A723BABD4778970 /* SpriteKitButton.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -282,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				24EF85952573A048005F7EEF /* HudDelegate.swift */,
+				3889542BCB8881C0505A2391 /* PopupButtonHandlerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -453,6 +468,11 @@
 				244A80C52572650C00C943BE /* GroundNode.swift in Sources */,
 				24EF85962573A048005F7EEF /* HudDelegate.swift in Sources */,
 				244A80BD25725F3100C943BE /* PhysicsHelper.swift in Sources */,
+				3889529036B7C6A76A7E1F3D /* PopupNode.swift in Sources */,
+				388951BAFC1796FB3B677CBE /* ScorePopupNode.swift in Sources */,
+				388956320AD10FFAF74EF5D8 /* BannerLabel.swift in Sources */,
+				388954C9804513BE5A182E9A /* PopupButtonHandlerDelegate.swift in Sources */,
+				388952827F33E82E9B6AFC55 /* SpriteKitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
